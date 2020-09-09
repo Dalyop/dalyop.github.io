@@ -1,0 +1,719 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Rimouski";
+}
+body {
+	background-color: white;
+	color: black;
+	font-family: "Rimouski";
+    font-size: 16px;
+}
+
+nav {
+    background-color: black;
+  	color: black;
+    padding: 0px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.iconImage {
+	margin-top: 90px;
+    background-color: white;
+    border-radius: 150px;
+    width: 200px;
+}
+/*Right aligned search box*/
+.searchContainer {
+    display: flex;
+    flex: 1 1 0.5;
+    position: relative;
+    overflow: hidden;
+}
+
+.searchIcon {
+    background-color: white;
+    color: black;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+/*Alert/notification box*/
+.alert {
+    padding: 20px;
+    background-color: #921;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+/*Flip card css*/
+.flip-card {
+	margin-top: 60px;
+    background-color: transparent;
+    width: 110px;
+    height: 60px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    font-size: 20pt;
+    background-color: black;
+    color: white;
+}
+
+.flip-card-back {
+    font-size: 20pt;
+    background-color: black;
+    color: blue;
+    transform: rotateY(180deg);
+}
+
+.flip-card-navbarTop {
+	margin-top: 0px;
+    background-color: transparent;
+    width: 100px;
+    height: 0px;
+    perspective: 1000px;
+}
+
+.flip-card-inner-navbarTop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-navbarTop:hover .flip-card-inner-navbarTop {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front-navbarTop, .flip-card-back-navbarTop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front-navbarTop {
+	font-size: 9pt;
+    background-color: black;
+    color: black;
+}
+
+.flip-card-back-navbarTop {
+    font-size: 9pt;
+    background-color: black;
+    color: blue;
+    transform: rotateY(180deg);
+}
+
+/*card display*/
+
+.card {
+    margin: 0px auto;
+    background-color: black;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+
+/* Mobile menu */
+@media all and (min-width: 280px){
+}
+	.displayContainerTop {
+		position: relative;
+    	width: 100%;
+	}
+	ul li {
+		list-style-type: none;
+	}
+
+	.displayCenterTop {
+		
+		background-image: url(/assets/%E2%80%A2%20Sunny_weather.jpg);
+		display: inline-block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.displayItemsTop {
+		font-size: 12pt;
+		color: white;
+		padding: 20px 2px;
+
+	}
+	.displayContainer {
+		display: none;
+	}
+	ul li {
+		list-style-type: none;
+	}
+
+	.menu {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	.menu li a {
+		color: black;
+      	display: block;
+     	padding: 2px;
+}
+/* Demo 2 */
+#demo-2 input[type=search] {
+	width: 25px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#demo-2 input[type=search]:hover {
+	background-color: #fff;
+}
+#demo-2 input[type=search]:focus {
+	width: 100px;
+	padding-left: 30px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#demo-2 input:-moz-placeholder {
+	color: black;
+}
+#demo-2 input::-webkit-input-placeholder {
+	color: transparent;
+}
+	input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 80%;
+}
+input[type=search] {
+	background: #fff url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 4px 9px 32px;
+	width: 65px;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+	.searchContainer {
+      position: relative;
+}
+	.searchButton {
+		margin: 5px;
+      border: 0;
+		background-color: mediumslateblue;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 10px;
+}
+
+.iconImagesTop {
+	padding: 2px 0px;
+	margin: 0px;
+	background-color: transparent;
+}
+.iconMobile {
+	width: 50px;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Tablet menu */
+@media all and (min-width: 500px) {
+	    
+	body {
+		background-color: white;
+		margin: 10px auto;
+		padding: 20px;
+	}
+	.logo {
+        order: 0;
+    }
+	nav {
+    background-color: #359;
+  	color: white;
+		border-radius: 35px;
+    padding: 0px 20px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+	.iconImages {
+		padding: 5px 0px;
+}
+	.iconImage {
+		margin: 0;
+		padding: 0px 0px;
+}
+    
+    .displayContainerTop {
+		position: relative;
+    	width: 100%;
+	}
+	ul li {
+		list-style-type: none;
+	}
+
+	.displayCenterTop {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+	.displayItemsTop {
+		font-size: 1.3rem;
+		color: blacks;
+		padding: 30px 5%;
+
+	}
+	.menu {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+	.menu li a {
+		color: black;
+      	display: block;
+     	padding: 0;
+}
+	.searchContainer {
+      position: relative;
+      border-radius: 5px;
+}
+	.searchIcon {
+      padding: 0.5rem;
+      font-weight: bold;
+      font-size: 11pt;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+}
+
+	.searchBox {
+     	width: 100%;
+      	border: 0;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+      	padding: 0.5rem 0.5rem 0.5rem 0;
+		flex: 1;
+}
+
+	.searchButton {
+      	border: 0;
+		background-color: #292;
+     	color: white;
+		margin-left: 10px;
+      	padding: 0.5rem 20px;
+      	border-radius: 20px;
+}
+
+	
+	
+	
+.iconImagesTop {
+	padding: 10px 0px;
+	margin: 0px;
+	border: none;
+}
+
+.flip-card-navbarTop {
+	padding: 0px;
+	margin: 0;
+    height: 20px;
+    background-color: transparent;
+    perspective: 1000px;
+}
+.flip-card-inner-navbarTop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-navbarTop:hover .flip-card-inner-navbarTop {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front-navbarTop, .flip-card-back-navbarTop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front-navbarTop {
+    font-size: 0.7rem;
+	border-style: none;
+    background-color: transparent;
+    color: black;
+}
+
+.flip-card-back-navbarTop {
+    font-size: 0.7rem;
+	border-style: none;
+    background-color: transparent;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+	
+/*card display*/
+.card-top {
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20px;
+	background-color: white;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 350px;
+}
+
+.card {
+	padding: 1px;
+    margin: 0px auto;
+    background-color: transparent;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 0px 20px;
+}
+.flip-card-inner {
+	margin-left: 30px;
+    position: relative;
+    width: 100px;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.flip-card-front {
+	text-align: center;
+    font-size: 1.5rem;
+	border-style: none;
+    background-color: transparent;
+    color: black;
+}
+
+.flip-card-back {
+	text-align: center;
+    font-size: 1.5rem;
+	border-style: none;
+    background-color: transparent;
+    color: black;
+    transform: rotateY(180deg);
+}
+	.flip-card-content {
+		margin: 10px;
+		padding: 0px 0px;;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+/* Desktop menu */
+@media all and (min-width: 1024px) {
+    .menu {
+        /*align-items: flex-start; */ 
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+	body {
+		background-color: black;
+		color: white;
+	}
+	nav {
+    	background-color: white;
+  		color: black;
+   		padding: 0px 10px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+	.iconImages {
+		padding: 5px 20px;
+}
+	/* Centered aligned nav bar content */
+.displayContainer {
+	display: block;
+    position: absolute;
+    width: 100%;
+}
+.displayContainerTop {
+	display: none;
+}
+
+ul li {
+  	list-style-type: none;
+}
+
+.displayCenter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.displayItems {
+	margin-top: 20px;
+  	padding: 10px 20px;
+	
+}
+.bodyContent {
+    display: flex;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+	/*Right aligned search box */
+	
+	input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 80%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+
+input[type=search] {
+	background: #fff url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 4px 9px 32px;
+	width: 65px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: black;
+}
+	
+	.searchIcon {
+		color: black;
+		padding: 30px;
+	}
+.searchContainer {
+    display: flex;
+    flex: 1 1 0.5;
+    position: relative;
+    overflow: hidden;
+}
+.searchButton {
+    margin: 0;
+	margin-left: 5px;
+	padding: 10px;
+}
+/*Flip card navbar css */
+.flip-card-navbar {
+	margin-bottom: 30px;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+    perspective: 1000px;
+}
+
+.flip-card-inner-navbar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-navbar:hover .flip-card-inner-navbar {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front-navbar, .flip-card-back-navbar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front-navbar {
+    font-size: 8pt;
+    background-color: transparent;
+    color: black;
+}
+
+.flip-card-back-navbar {
+    font-size: 8pt;
+    background-color: transparent;
+    color: blue;
+    transform: rotateY(180deg);
+}
+	/*Flip card css */
+.flip-card {
+    background-color: transparent;
+    width: 110px;
+    height: 60px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    font-size: 20pt;
+    background-color: black;
+    color: white;
+}
+
+.flip-card-back {
+    font-size: 20pt;
+    background-color: black;
+    color: blue;
+    transform: rotateY(180deg);
+}
+	
+/*card display */
+.card {
+    margin: 50px auto;
+    background-color: black;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 200px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
