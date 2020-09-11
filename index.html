@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Moriah Weather App</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d1616">
+  <meta name="msapplication-TileColor" content="#fff6f6">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo"><img src="assets/img/Moriah logo.PNG" alt="Applicatio logo" class="img-fluid"></a>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a class="city">City</a></li>
+          <li><a class="country">Country</a></li>
+          <li class="iconImages"><img src="assets/img/icons/unknown.png" width="27px"></li>
+          <li><a class="temp-front">50</a></li>
+          <li><a class="temp-back">20</a></li>
+          <li><a class="desc">Description</a</li>
+        </ul>
+      </nav>
+
+      <div id="demo-2" class="searchContainer">
+				<input class="inputValue" type="search" name="search" placeholder="Enter city...">
+				<input type="submit" name="Search city button" value="Go" class="searchButton">
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Moriah weather<span>.</span></h1>
+        </div>
+      </div>
+
+      <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-xl-2 col-md-4 col-6">
+          <div class="icon-box">
+            <i class="fiveIcon1"><img src="assets/img/icons/unknown.png" width="60px"></i>
+            <p class="fiveTemp1">Temperature</a></p>
+            <p class="fiveCity1">City</p>
+            <span class="fiveCountry1"> Country</span>
+            <p class="fiveDesc1">Description<span><date class="fiveDate1"> Date</date></span></p>
+          </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-6">
+          <div class="icon-box">
+            <i class="fiveIcon2"><img src="assets/img/icons/unknown.png" width="60px"></i>
+            <p class="fiveTemp2">Temperature</a></p>
+            <p class="fiveCity2">City</p>
+            <span class="fiveCountry2"> Country</span>
+            <p class="fiveDesc2">Description<span><date class="fiveDate2"> Date</date></span></p>
+          </div>
+        </div><div class="col-xl-2 col-md-4 col-6">
+          <div class="icon-box">
+            <i class="fiveIcon3"><img src="assets/img/icons/unknown.png" width="60px"></i>
+            <p class="fiveTemp3">Temperature</a></p>
+            <p class="fiveCity3">City</p>
+            <span class="fiveCountry3"> Country</span>
+            <p class="fiveDesc3">Description<span><date class="fiveDate3"> Date</date></span></p>
+          </div>
+        </div><div class="col-xl-2 col-md-4 col-6">
+          <div class="icon-box">
+            <i class="fiveIcon4"><img src="assets/img/icons/unknown.png" width="60px"></i>
+            <p class="fiveTemp4">Temperature</a></p>
+            <p class="fiveCity4">City</p>
+            <span class="fiveCountry4"> Country</span>
+            <p class="fiveDesc4">Description<span><date class="fiveDate4"> Date</date></span></p>
+          </div>
+        </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+  <main id="main">
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Search by city name</h2>
+          <div class="form-row">
+            <div class="col-12 col-md-9 mb-2 mb-md-0">
+              <input type="email" id="searchInput" class="form-control form-control-lg" placeholder="Enter city name...">
+            </div>
+            <div class="col-12 col-md-3">
+              <button type="submit" id="dailySearch" class="btn btn-block btn-lg btn-primary">Search!</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div><i class="searchIcon1"><img src="assets/img/icons/unknown.png"></i></div>
+              <h4><a class="searchTemp1">Temperature</a></h4>
+              <p class="searchDesc1">Description</p>
+              <p class="searchCity1">City</p>
+              <p class="searchCountry1">Description</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div><i class="searchIcon2"><img src="assets/img/icons/unknown.png"></i></div>
+              <h4><a class="searchTemp2">Temperature</a></h4>
+              <p class="searchDesc2">Description</p>
+              <p class="searchCity2">City</p>
+              <p class="searchCountry2">Description</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div><i class="searchIcon3"><img src="assets/img/icons/unknown.png"></i></div>
+              <h4><a class="searchTemp3">Temperature</a></h4>
+              <p class="searchDesc3">Description</p>
+              <p class="searchCity3">City</p>
+              <p class="searchCountry3">Description</p>
+            </div>
+          </div>
+
+      </div>
+    </section><!-- End Services Section -->
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right" data-aos-delay="100"></div>
+          <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch" data-aos="fade-left" data-aos-delay="100">
+            <div class="content d-flex flex-column justify-content-center">
+              <h3>Daily weather forecast</h3>
+              <p>
+                Get all daily weather information right at your fingertips
+              </p>
+              <div class="row">
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="dailyIcon1"><img src="assets/img/icons/unknown.png"></i>
+                    <span data-toggle="counter-up" class="dailyTemperature1">65</span>
+                    <p><strong class="dailyDescription1">Undefined</strong>.</p>
+                    <p><strong class="dailyDate1">Undefined</strong>.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="dailyIcon2"><img src="assets/img/icons/unknown.png"></i>
+                    <span data-toggle="counter-up" class="dailyTemperature2">65</span>
+                    <p><strong class="dailyDescription2">Undefined</strong>.</p>
+                    <p><strong class="dailyDate2">Undefined</strong>.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="dailyIcon3"><img src="assets/img/icons/unknown.png"></i>
+                    <span data-toggle="counter-up" class="dailyTemperature3">65</span>
+                    <p><strong class="dailyDescription3">Undefined</strong>.</p>
+                    <p><strong class="dailyDate3">Undefined</strong>.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6 d-md-flex align-items-md-stretch">
+                  <div class="count-box">
+                    <i class="dailyIcon4"><img src="assets/img/icons/unknown.png"></i>
+                    <span data-toggle="counter-up" class="dailyTemperature4">65</span>
+                    <p><strong class="dailyDescription4">Undefined</strong>.</p>
+                    <p><strong class="dailyDate4">Undefined</strong>.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+      </div>
+    </section><!-- End Counts Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Google Africa Developer Scholarship</span></strong>.
+      </div>
+      <div class="credits">
+         <a href="#">GADS2020</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
