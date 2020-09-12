@@ -6,8 +6,6 @@ const cacheAssets = [
 	'/assets/css/main.css',
 	'/assets/js/app.js',
 	'/assets/js/main.js',
-	'/assets/vendor/',
-	'/assets/img/',
 	'/icons/'
 	
 ];
