@@ -222,7 +222,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId = data.list[0].weather[0].icon;
 			geoDailyForecast.city = data.city.name;
 			geoDailyForecast.country = data.city.country;
-			geoDailyForecast.temperature = Math.floor(data.list[24].main.temp - kelvin);
+			geoDailyForecast.temperature.celcius = Math.floor(data.list[0].main.temp - kelvin);
 			geoDailyForecast.description = data.list[0].weather[0].description;
 			geoDailyForecast.date = data.list[0].dt_txt;
 
@@ -230,7 +230,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId2 = data.list[8].weather[0].icon;
 			geoDailyForecast.city2 = data.city.name;
 			geoDailyForecast.country2 = data.city.country;
-			geoDailyForecast.temperature.celcius2 = Math.floor(data.list[24].main.temp - kelvin);
+			geoDailyForecast.temperature.celcius2 = Math.floor(data.list[8].main.temp - kelvin);
 			geoDailyForecast.description2 = data.list[8].weather[0].description;
 			geoDailyForecast.date2 = data.list[8].dt_txt;
 
@@ -238,7 +238,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId3 = data.list[16].weather[0].icon;
 			geoDailyForecast.city3 = data.city.name;
 			geoDailyForecast.country3 = data.city.country;
-			geoDailyForecast.temperature.celcius3 = Math.floor(data.list[24].main.temp - kelvin);
+			geoDailyForecast.temperature.celcius3 = Math.floor(data.list[16].main.temp - kelvin);
 			geoDailyForecast.description3 = data.list[16].weather[0].description;
 			geoDailyForecast.date3 = data.list[16].dt_txt;
 
@@ -258,28 +258,28 @@ function dailyForecast(latitude, longitude){
 function displayDailyForecast(){
 			//Day 1 weather forecast display
 			document.querySelector('.dailyIcon1').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId}.png">`;
-			document.querySelector('.dailyTemperature1').innerHTML = `${geoDailyForecast.temperature.celcius}<span>°C</span>`;
+			document.querySelector('.dailyTemperature1').innerHTML = `${geoDailyForecast.temperature.celcius}<big>°C</big>`;
 			document.querySelector('.dailyDescription1').innerHTML = geoDailyForecast.description;
 			document.querySelector('.dailyCity1').innerHTML = geoDailyForecast.city;
 			document.querySelector('.dailyDate1').innerHTML = geoDailyForecast.date;
 
 			//Day 2 weather forecast display
 			document.querySelector('.dailyIcon2').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId2}.png">`;
-			document.querySelector('.dailyTemperature2').innerHTML = `${geoDailyForecast.temperature.celcius2}<span>°C</span>`;
+			document.querySelector('.dailyTemperature2').innerHTML = `${geoDailyForecast.temperature.celcius2}<big>°C</big>`;
 			document.querySelector('.dailyDescription2').innerHTML = geoDailyForecast.description2;
 			document.querySelector('.dailyCity2').innerHTML = geoDailyForecast.city2;
 			document.querySelector('.dailyDate2').innerHTML = geoDailyForecast.date2;
 
 			//Day 3 weather forecast display
 			document.querySelector('.dailyIcon3').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId3}.png">`;
-			document.querySelector('.dailyTemperature3').innerHTML = `${geoDailyForecast.temperature.celcius3}<span>°C</span>`;
+			document.querySelector('.dailyTemperature3').innerHTML = `${geoDailyForecast.temperature.celcius3}<big>°C</big>`;
 			document.querySelector('.dailyDescription3').innerHTML = geoDailyForecast.description3;
 			document.querySelector('.dailyCity3').innerHTML = geoDailyForecast.city3;
 			document.querySelector('.dailyDate3').innerHTML = geoDailyForecast.date3;
 
 			//Day 4 weather forecast display
 			document.querySelector('.dailyIcon4').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId4}.png">`;
-			document.querySelector('.dailyTemperature4').innerHTML = `${geoDailyForecast.temperature.celcius4}<span>°C</span>`;
+			document.querySelector('.dailyTemperature4').innerHTML = `${geoDailyForecast.temperature.celcius4}<big>°C</big>`;
 			document.querySelector('.dailyDescription4').innerHTML = geoDailyForecast.description4;
 			document.querySelector('.dailyCity4').innerHTML = geoDailyForecast.city4;
 			document.querySelector('.dailyDate4').innerHTML = geoDailyForecast.date4;
