@@ -1,24 +1,24 @@
 /* Demo 2 */
-#demo-2 input[type=search] {
+#search-2 input[type=search] {
 	width: 25px;
 	padding-left: 10px;
 	color: transparent;
 	cursor: pointer;
 }
-#demo-2 input[type=search]:hover {
+#search-2 input[type=search]:hover {
 	background-color: #fff;
 }
-#demo-2 input[type=search]:focus {
+#search-2 input[type=search]:focus {
 	width: 100px;
 	padding-left: 30px;
 	color: #000;
 	background-color: #fff;
 	cursor: auto;
 }
-#demo-2 input:-moz-placeholder {
+#search-2 input:-moz-placeholder {
 	color: black;
 }
-#demo-2 input::-webkit-input-placeholder {
+#search-2 input::-webkit-input-placeholder {
 	color: transparent;
 }
 	input {
