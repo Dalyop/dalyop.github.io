@@ -121,8 +121,8 @@ function displayGeoWeather(){
 			document.querySelector('.city').innerHTML = geoWeather.city;
 			document.querySelector('.country').innerHTML = geoWeather.country;
 			document.querySelector('.desc').innerHTML = geoWeather.description;
-			document.querySelector('.temp-front').innerHTML = `${geoWeather.temperature.celcius}°<span>C</span>`;
-			document.querySelector('.temp-back').innerHTML = `${geoWeather.temperature.fahrenheit}<span>F</span>`;
+			document.querySelector('.temp-front').innerHTML = `${geoWeather.temperature.celcius}<span>°C</span>`;
+			document.querySelector('.temp-back').innerHTML = `${geoWeather.temperature.fahrenheit}<span>°F</span>`;
 };
 
 var geoFiveDay = {};
@@ -139,7 +139,7 @@ function fiveDaysForecast(latitude, longitude){
 			geoFiveDay.city = data.city.name;
 			geoFiveDay.country = data.city.country;
 			geoFiveDay.date = data.list[0].dt_txt;
-			geoFiveDay.temperature.celcius = data.list[0].main.temp;
+			geoFiveDay.temperature.celcius = Math.floor(data.list[3].main.temp - kelvin);
 			geoFiveDay.description = data.list[0].weather[0].description;
 			geoFiveDay.iconId = data.list[0].weather[0].icon;
 
@@ -147,7 +147,7 @@ function fiveDaysForecast(latitude, longitude){
 			geoFiveDay.city2 = data.city.name;
 			geoFiveDay.country2 = data.city.country;
 			geoFiveDay.date2 = data.list[1].dt_txt;
-			geoFiveDay.temperature.celcius2 = data.list[1].main.temp;
+			geoFiveDay.temperature.celcius2 = Math.floor(data.list[3].main.temp - kelvin);
 			geoFiveDay.description2 = data.list[1].weather[0].description;
 			geoFiveDay.iconId2 = data.list[1].weather[0].icon;
 
@@ -155,7 +155,7 @@ function fiveDaysForecast(latitude, longitude){
 			geoFiveDay.city3 = data.city.name;
 			geoFiveDay.country3 = data.city.country;
 			geoFiveDay.date3 = data.list[2].dt_txt;
-			geoFiveDay.temperature.celcius3 = data.list[2].main.temp;
+			geoFiveDay.temperature.celcius3 = Math.floor(data.list[3].main.temp - kelvin);
 			geoFiveDay.description3 = data.list[2].weather[0].description;
 			geoFiveDay.iconId3 = data.list[2].weather[0].icon;
 
@@ -163,7 +163,7 @@ function fiveDaysForecast(latitude, longitude){
 			geoFiveDay.city4 = data.city.name;
 			geoFiveDay.country4 = data.city.country;
 			geoFiveDay.date4 = data.list[3].dt_txt;
-			geoFiveDay.temperature.celcius4 = data.list[3].main.temp;
+			geoFiveDay.temperature.celcius4 = Math.floor(data.list[3].main.temp - kelvin);
 			geoFiveDay.description4 = data.list[3].weather[0].description;
 			geoFiveDay.iconId4 = data.list[3].weather[0].icon;
 
@@ -172,13 +172,13 @@ function fiveDaysForecast(latitude, longitude){
 			displayFiveDay()
 		})
 }
-//Five day display function
+//Four day display function
 function displayFiveDay(){
 			document.querySelector('.fiveIcon1').innerHTML = `<img src="assets/img/icons/${geoFiveDay.iconId}.png" width="50px;"/>`;
 			document.querySelector('.fiveDate1').innerHTML = geoFiveDay.date;
 			document.querySelector('.fiveCity1').innerHTML = geoFiveDay.city;
 			document.querySelector('.fiveCountry1').innerHTML = geoFiveDay.country;
-			document.querySelector('.fiveTemp1').innerHTML = geoFiveDay.temperature.celcius;
+			document.querySelector('.fiveTemp1').innerHTML = `${geoFiveDay.temperature.celcius}<span>°C</span>`;
 			document.querySelector('.fiveDesc1').innerHTML = geoFiveDay.description;
 
 			//Display for day 2
@@ -186,7 +186,7 @@ function displayFiveDay(){
 			document.querySelector('.fiveDate2').innerHTML = geoFiveDay.date2;
 			document.querySelector('.fiveCity2').innerHTML = geoFiveDay.city2;
 			document.querySelector('.fiveCountry2').innerHTML = geoFiveDay.country2;
-			document.querySelector('.fiveTemp2').innerHTML = geoFiveDay.temperature.celcius2;
+			document.querySelector('.fiveTemp2').innerHTML = `${geoFiveDay.temperature.celcius2}<span>°C</span>`;
 			document.querySelector('.fiveDesc2').innerHTML = geoFiveDay.description2;
 
 			//Display for day 3
@@ -194,7 +194,7 @@ function displayFiveDay(){
 			document.querySelector('.fiveDate3').innerHTML = geoFiveDay.date3;
 			document.querySelector('.fiveCity3').innerHTML = geoFiveDay.city3;
 			document.querySelector('.fiveCountry3').innerHTML = geoFiveDay.country3;
-			document.querySelector('.fiveTemp3').innerHTML = geoFiveDay.temperature.celcius3;
+			document.querySelector('.fiveTemp3').innerHTML = `${geoFiveDay.temperature.celcius3}<span>°C</span>`;
 			document.querySelector('.fiveDesc3').innerHTML = geoFiveDay.description3;
 
 			//Display for day 4
@@ -202,7 +202,7 @@ function displayFiveDay(){
 			document.querySelector('.fiveDate4').innerHTML = geoFiveDay.date4;
 			document.querySelector('.fiveCity4').innerHTML = geoFiveDay.city4;
 			document.querySelector('.fiveCountry4').innerHTML = geoFiveDay.country4;
-			document.querySelector('.fiveTemp4').innerHTML = geoFiveDay.temperature.celcius4;
+			document.querySelector('.fiveTemp4').innerHTML = `${geoFiveDay.temperature.celcius4}<span>°C</span>`;
 			document.querySelector('.fiveDesc4').innerHTML = geoFiveDay.description4;
 
 }
@@ -222,7 +222,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId = data.list[0].weather[0].icon;
 			geoDailyForecast.city = data.city.name;
 			geoDailyForecast.country = data.city.country;
-			geoDailyForecast.temperature.celcius = data.list[0].main.temp;
+			geoDailyForecast.temperature = Math.floor(data.list[24].main.temp - kelvin);
 			geoDailyForecast.description = data.list[0].weather[0].description;
 			geoDailyForecast.date = data.list[0].dt_txt;
 
@@ -230,7 +230,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId2 = data.list[8].weather[0].icon;
 			geoDailyForecast.city2 = data.city.name;
 			geoDailyForecast.country2 = data.city.country;
-			geoDailyForecast.temperature.celcius2 = data.list[8].main.temp;
+			geoDailyForecast.temperature.celcius2 = Math.floor(data.list[24].main.temp - kelvin);
 			geoDailyForecast.description2 = data.list[8].weather[0].description;
 			geoDailyForecast.date2 = data.list[8].dt_txt;
 
@@ -238,7 +238,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId3 = data.list[16].weather[0].icon;
 			geoDailyForecast.city3 = data.city.name;
 			geoDailyForecast.country3 = data.city.country;
-			geoDailyForecast.temperature.celcius3 = data.list[16].main.temp;
+			geoDailyForecast.temperature.celcius3 = Math.floor(data.list[24].main.temp - kelvin);
 			geoDailyForecast.description3 = data.list[16].weather[0].description;
 			geoDailyForecast.date3 = data.list[16].dt_txt;
 
@@ -246,7 +246,7 @@ function dailyForecast(latitude, longitude){
 			geoDailyForecast.iconId4 = data.list[24].weather[0].icon;
 			geoDailyForecast.city4 = data.city.name;
 			geoDailyForecast.country4 = data.city.country;
-			geoDailyForecast.temperature.celcius4 = data.list[24].main.temp;
+			geoDailyForecast.temperature.celcius4 = Math.floor(data.list[24].main.temp - kelvin);
 			geoDailyForecast.description4 = data.list[24].weather[0].description;
 			geoDailyForecast.date4 = data.list[24].dt_txt;
 	})
@@ -258,28 +258,28 @@ function dailyForecast(latitude, longitude){
 function displayDailyForecast(){
 			//Day 1 weather forecast display
 			document.querySelector('.dailyIcon1').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId}.png">`;
-			document.querySelector('.dailyTemperature1').innerHTML = `${geoDailyForecast.temperature.celcius}°C<span>C</span>`;
+			document.querySelector('.dailyTemperature1').innerHTML = `${geoDailyForecast.temperature.celcius}<span>°C</span>`;
 			document.querySelector('.dailyDescription1').innerHTML = geoDailyForecast.description;
 			document.querySelector('.dailyCity1').innerHTML = geoDailyForecast.city;
 			document.querySelector('.dailyDate1').innerHTML = geoDailyForecast.date;
 
 			//Day 2 weather forecast display
 			document.querySelector('.dailyIcon2').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId2}.png">`;
-			document.querySelector('.dailyTemperature2').innerHTML = `${geoDailyForecast.temperature.celcius2}°C<span>C</span>`;
+			document.querySelector('.dailyTemperature2').innerHTML = `${geoDailyForecast.temperature.celcius2}<span>°C</span>`;
 			document.querySelector('.dailyDescription2').innerHTML = geoDailyForecast.description2;
 			document.querySelector('.dailyCity2').innerHTML = geoDailyForecast.city2;
 			document.querySelector('.dailyDate2').innerHTML = geoDailyForecast.date2;
 
 			//Day 3 weather forecast display
 			document.querySelector('.dailyIcon3').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId3}.png">`;
-			document.querySelector('.dailyTemperature3').innerHTML = `${geoDailyForecast.temperature.celcius3}°C<span>C</span>`;
+			document.querySelector('.dailyTemperature3').innerHTML = `${geoDailyForecast.temperature.celcius3}<span>°C</span>`;
 			document.querySelector('.dailyDescription3').innerHTML = geoDailyForecast.description3;
 			document.querySelector('.dailyCity3').innerHTML = geoDailyForecast.city3;
 			document.querySelector('.dailyDate3').innerHTML = geoDailyForecast.date3;
 
 			//Day 4 weather forecast display
 			document.querySelector('.dailyIcon4').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId4}.png">`;
-			document.querySelector('.dailyTemperature4').innerHTML = `${geoDailyForecast.temperature.celcius4}°C<span>C</span>`;
+			document.querySelector('.dailyTemperature4').innerHTML = `${geoDailyForecast.temperature.celcius4}<span>°C</span>`;
 			document.querySelector('.dailyDescription4').innerHTML = geoDailyForecast.description4;
 			document.querySelector('.dailyCity4').innerHTML = geoDailyForecast.city4;
 			document.querySelector('.dailyDate4').innerHTML = geoDailyForecast.date4;

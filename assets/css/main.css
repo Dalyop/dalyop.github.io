@@ -52,3 +52,9 @@ input[type=search] {
 .searchButton:hover {
 	background-color: rgb(17, 17, 202);
 }
+
+@media (max-width: 990px) {
+	.searchContainer {
+		display: none;
+	}
+}
