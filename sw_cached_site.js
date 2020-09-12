@@ -2,11 +2,12 @@ const cacheName = 'v1';
 
 const cacheAssets = [
 	'index.html',
-	'/assets/css/styles.css',
-	'/assets/css/main.css',
-	'/assets/js/app.js',
-	'/assets/js/main.js',
-	'/icons/'
+	'../assets/css/style.css',
+	'../assets/css/main.css',
+	'../assets/js/app.js',
+	'../assets/js/main.js',
+	'../assets/img/icons/',
+	'../assets/vendor/'
 	
 ];
 
@@ -17,7 +18,7 @@ self.addEventListener('install', event => {
 	event.waitUntil(
 		caches.open(cacheName)
 		.then(cache => {
-			console.log('Service workert is caching files');
+			console.log('Service worker is caching files');
 			cache.addAll(cacheAssets);
 		})
 		.then(() => self.skipWaiting())
