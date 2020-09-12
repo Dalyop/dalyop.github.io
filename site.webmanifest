@@ -1,6 +1,6 @@
 {
-    "name": "Moriah Weather App",
-    "short_name": "Moriah",
+    "name": "Smash It",
+    "short_name": "Smash It",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -8,14 +8,13 @@
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
+            "src": "/android-chrome-384x384.png",
+            "sizes": "384x384",
             "type": "image/png"
         }
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "start_url": "/",
-    "display": "standalone",
-    "orientation": "any"
+    "display": "standalone"
 }
