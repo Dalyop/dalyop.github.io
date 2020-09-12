@@ -258,26 +258,30 @@ function dailyForecast(latitude, longitude){
 function displayDailyForecast(){
 			//Day 1 weather forecast display
 			document.querySelector('.dailyIcon1').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId}.png">`;
-			document.querySelector('.dailyTemperature1').innerHTML = geoDailyForecast.temperature.celcius;
+			document.querySelector('.dailyTemperature1').innerHTML = `${geoDailyForecast.temperature.celcius}°C<span>C</span>`;
 			document.querySelector('.dailyDescription1').innerHTML = geoDailyForecast.description;
+			document.querySelector('.dailyCity1').innerHTML = geoDailyForecast.city;
 			document.querySelector('.dailyDate1').innerHTML = geoDailyForecast.date;
 
 			//Day 2 weather forecast display
 			document.querySelector('.dailyIcon2').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId2}.png">`;
-			document.querySelector('.dailyTemperature2').innerHTML = geoDailyForecast.temperature.celcius2;
+			document.querySelector('.dailyTemperature2').innerHTML = `${geoDailyForecast.temperature.celcius2}°C<span>C</span>`;
 			document.querySelector('.dailyDescription2').innerHTML = geoDailyForecast.description2;
+			document.querySelector('.dailyCity2').innerHTML = geoDailyForecast.city2;
 			document.querySelector('.dailyDate2').innerHTML = geoDailyForecast.date2;
 
 			//Day 3 weather forecast display
 			document.querySelector('.dailyIcon3').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId3}.png">`;
-			document.querySelector('.dailyTemperature3').innerHTML = geoDailyForecast.temperature.celcius3;
+			document.querySelector('.dailyTemperature3').innerHTML = `${geoDailyForecast.temperature.celcius3}°C<span>C</span>`;
 			document.querySelector('.dailyDescription3').innerHTML = geoDailyForecast.description3;
+			document.querySelector('.dailyCity3').innerHTML = geoDailyForecast.city3;
 			document.querySelector('.dailyDate3').innerHTML = geoDailyForecast.date3;
 
 			//Day 4 weather forecast display
 			document.querySelector('.dailyIcon4').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId4}.png">`;
-			document.querySelector('.dailyTemperature4').innerHTML = geoDailyForecast.temperature.celcius4;
+			document.querySelector('.dailyTemperature4').innerHTML = `${geoDailyForecast.temperature.celcius4}°C<span>C</span>`;
 			document.querySelector('.dailyDescription4').innerHTML = geoDailyForecast.description4;
+			document.querySelector('.dailyCity4').innerHTML = geoDailyForecast.city4;
 			document.querySelector('.dailyDate4').innerHTML = geoDailyForecast.date4;
 }
 
@@ -287,74 +291,133 @@ searchDailyWeather.temperature = {
 
 }
 
-var searchInput = document.getElementById('searchInput.value');
+var searchInput = document.getElementById('searchInput');
 var dailySearch = document.getElementById('dailySearch');
 
-
+//Event listener that listens for a click when the user hits the search button
 dailySearch.addEventListener('click', function(){
-	function dailyForecastSearch(){
-		let dailySearchApi = (`https://api.openweathermap.org/data/2.5/forecast?q=`+searchInput.value+`&appid=${api}`);
-		console.log(dailySearchApi);
-		fetch(dailySearchApi)
-			
-			.then(response => response.json())
-			.then(function(data){
-				console.log(data);
-				searchDailyWeather.iconId = data.list[0].weather[0].icon;
-				searchDailyWeather.city = data.city.name;
-				searchDailyWeather.country = data.city.country;
-				searchDailyWeather.temperature.celcius = data.list[0].main.temp;
-				searchDailyWeather.description = data.list[0].weather[0].description;
-				searchDailyWeather.date = data.list[0].dt_txt;
-				console.log(geoDailyForecast);
-	
-				//Day 2
-				searchDailyWeather.iconId2 = data.list[8].weather[0].icon;
-				searchDailyWeather.city2 = data.city.name;
-				searchDailyWeather.country2 = data.city.country;
-				searchDailyWeather.temperature.celcius2 = data.list[8].main.temp;
-				searchDailyWeather.description2 = data.list[8].weather[0].description;
-				searchDailyWeather.date2 = data.list[8].dt_txt;
-				console.log(data);
-	
-				//Day 3
-				searchDailyWeather.iconId3 = data.list[16].weather[0].icon;
-				searchDailyWeather.city3 = data.city.name;
-				searchDailyWeather.country3 = data.city.country;
-				searchDailyWeather.temperature.celcius3 = data.list[16].main.temp;
-				searchDailyWeather.description3 = data.list[16].weather[0].description;
-				searchDailyWeather.date3 = data.list[16].dt_txt;
-				console.log(searchDailyWeather);
-			})
-			.then(function(){
-				displayDailySearch();
-				})
-			}
+	fetch(`https://api.openweathermap.org/data/2.5/forecast?q=`+searchInput.value+`&appid=${api}`)
+	.then(response => response.json())
+	.then(function(data){
+		if((Storage) !== undefined){
+			localStorage.setItem("searchData", JSON.stringify(data));
+			var sData = JSON.parse(localStorage.getItem("searchData"));
+				//Day one
+				searchDailyWeather.iconId = sData.list[0].weather[0].icon;
+				searchDailyWeather.city = sData.city.name;
+				searchDailyWeather.country = sData.city.country;
+				searchDailyWeather.description = sData.list[0].weather[0].description;
+				searchDailyWeather.temperature.celcius = Math.floor(sData.list[0].main.temp - kelvin);
+				searchDailyWeather.temperature.fahrenheit = Math.floor((sData.list[0].main.temp - kelvin)  * 9/5 + 32);
+				searchDailyWeather.date = sData.list[0].dt_txt;
+
+				//Day two
+				searchDailyWeather.iconId1 = sData.list[8].weather[0].icon;
+				searchDailyWeather.city1 = sData.city.name;
+				searchDailyWeather.country1 = sData.city.country;
+				searchDailyWeather.description1 = sData.list[8].weather[0].description;
+				searchDailyWeather.temperature.celcius1 = Math.floor(sData.list[8].main.temp - kelvin);
+				searchDailyWeather.temperature.fahrenheit1 = Math.floor((sData.list[8].main.temp - kelvin)  * 9/5 + 32);
+				searchDailyWeather.date1 = sData.list[8].dt_txt;
+
+				//Day three
+				searchDailyWeather.iconId2 = sData.list[16].weather[0].icon;
+				searchDailyWeather.city2 = sData.city.name;
+				searchDailyWeather.country2 = sData.city.country;
+				searchDailyWeather.description2 = sData.list[16].weather[0].description;
+				searchDailyWeather.temperature.celcius2 = Math.floor(sData.list[16].main.temp - kelvin);
+				searchDailyWeather.temperature.fahrenheit2 = Math.floor((sData.list[16].main.temp - kelvin)  * 9/5 + 32);
+				searchDailyWeather.date2 = sData.list[16].dt_txt;
+
+				//Day four
+				searchDailyWeather.iconId3 = sData.list[24].weather[0].icon;
+				searchDailyWeather.city3 = sData.city.name;
+				searchDailyWeather.country3 = sData.city.country;
+				searchDailyWeather.description3 = sData.list[24].weather[0].description;
+				searchDailyWeather.temperature.celcius3 = Math.floor(sData.list[24].main.temp - kelvin);
+				searchDailyWeather.temperature.fahrenheit3 = Math.floor((sData.list[24].main.temp - kelvin)  * 9/5 + 32);
+				searchDailyWeather.date3 = sData.list[24].dt_txt;
+
+				//Day five
+				searchDailyWeather.iconId4 = sData.list[31].weather[0].icon;
+				searchDailyWeather.city4 = sData.city.name;
+				searchDailyWeather.country4 = sData.city.country;
+				searchDailyWeather.description4 = sData.list[31].weather[0].description;
+				searchDailyWeather.temperature.celcius4 = Math.floor(sData.list[31].main.temp - kelvin);
+				searchDailyWeather.temperature.fahrenheit4 = Math.floor((sData.list[31].main.temp - kelvin)  * 9/5 + 32);
+				searchDailyWeather.date4 = sData.list[31].dt_txt;
+
+				//Day five
+				searchDailyWeather.iconId5 = sData.list[39].weather[0].icon;
+				searchDailyWeather.city5 = sData.city.name;
+				searchDailyWeather.country5 = sData.city.country;
+				searchDailyWeather.description5 = sData.list[39].weather[0].description;
+				searchDailyWeather.temperature.celcius5 = Math.floor(sData.list[39].main.temp - kelvin);
+				searchDailyWeather.temperature.fahrenheit5 = Math.floor((sData.list[39].main.temp - kelvin)  * 9/5 + 32);
+				searchDailyWeather.date5 = sData.list[39].dt_txt;
+		}else{
+			//What should go here?? hmm!
+		}
 	})
+	.then(function(){
+		displayDailyWeather();
+	})
+});
 
-	function displayDailySearch(){
-				document.querySelector('.searchIcon1').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId}.png">`;
-				document.querySelector('.searchTemp1').innerHTML = searchDailyWeather.temperature.celcius;
-				document.querySelector('.searchDesc1').innerHTML = searchDailyWeather.description;
-				document.querySelector('.searchCity1').innerHTML = searchDailyWeather.name;
-				document.querySelector('.searchCountry1').innerHTML = searchDailyWeather.city.country;
+//Displays the weather information to the user when they use the search box
+function displayDailyWeather(){
+		document.querySelector('.searchIcon1').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId}.png"  style="width:27px"/>`;
+		document.querySelector('.searchCity1').innerHTML = searchDailyWeather.city;
+		document.querySelector('.searchCountry1').innerHTML = searchDailyWeather.country;
+		document.querySelector('.searchDesc1').innerHTML = searchDailyWeather.description;
+		document.querySelector('.searchDate1').innerHTML = searchDailyWeather.date;
+		document.querySelector('.temp-cel1').innerHTML = `${searchDailyWeather.temperature.celcius}<span>°C</span>`;
+		//document.querySelector('.temp-fah1').innerHTML = `${searchDailyWeather.temperature.fahrenheit}<span>°F</span>`;
 
-				//Day 2 weather forecast display
-				document.querySelector('.searchIcon2').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId}.png">`;
-				document.querySelector('.searchTemp2').innerHTML = geoDailyForecast.temperature.celcius;
-				document.querySelector('.searchDesc2').innerHTML = searchDailyWeather.description;
-				document.querySelector('.searchCity2').innerHTML = searchDailyWeather.name;
-				document.querySelector('.searchCountry2').innerHTML = searchDailyWeather.city.country;
-			
-				//Day 3 weather forecast display
-				document.querySelector('.dailyIcon3').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId3}.png">`;
-				document.querySelector('.dailyTemperature3').innerHTML = geoDailyForecast.temperature.celcius3;
-				document.querySelector('.dailyDescription3').innerHTML = geoDailyForecast.description3;
-				document.querySelector('.dailyDate3').innerHTML = geoDailyForecast.date3;
-			
-				//Day 4 weather forecast display
-				document.querySelector('.dailyIcon4').innerHTML = `<img src="assets/img/icons/${geoDailyForecast.iconId4}.png">`;
-				document.querySelector('.dailyTemperature4').innerHTML = geoDailyForecast.temperature.celcius4;
-				document.querySelector('.dailyDescription4').innerHTML = geoDailyForecast.description4;
-				document.querySelector('.dailyDate4').innerHTML = geoDailyForecast.date4;
-	}
+		//Day two display
+		document.querySelector('.searchIcon2').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId1}.png"  style="width:27px"/>`;
+		document.querySelector('.searchCity2').innerHTML = searchDailyWeather.city1;
+		document.querySelector('.searchCountry2').innerHTML = searchDailyWeather.country1;
+		document.querySelector('.searchDesc2').innerHTML = searchDailyWeather.description1;
+		document.querySelector('.searchDate2').innerHTML = searchDailyWeather.date1;
+		document.querySelector('.temp-cel2').innerHTML = `${searchDailyWeather.temperature.celcius1}<span>°C</span>`;
+		//document.querySelector('.temp-back3').innerHTML = `${searchDailyWeather.temperature.fahrenheit1}<span>°F</span>`;
+
+		//Day three display
+		document.querySelector('.searchIcon3').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId2}.png"  style="width:27px"/>`;
+		document.querySelector('.searchCity3').innerHTML = searchDailyWeather.city2;
+		document.querySelector('.searchCountry3').innerHTML = searchDailyWeather.country2;
+		document.querySelector('.searchDesc3').innerHTML = searchDailyWeather.description2;
+		document.querySelector('.searchDate3').innerHTML = searchDailyWeather.date3;
+		document.querySelector('.temp-cel3').innerHTML = `${searchDailyWeather.temperature.celcius2}<span>°C</span>`;
+		//document.querySelector('.temp-back2').innerHTML = `${searchDailyWeather.temperature.fahrenheit2}<span>°F</span>`;
+
+		//Day four display
+		document.querySelector('.searchIcon4').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId3}.png"  style="width:27px"/>`;
+		document.querySelector('.searchCity4').innerHTML = searchDailyWeather.city3;
+		document.querySelector('.searchCountry4').innerHTML = searchDailyWeather.country3;
+		document.querySelector('.searchDesc4').innerHTML = searchDailyWeather.description3;
+		document.querySelector('.searchDate4').innerHTML = searchDailyWeather.date3;
+		document.querySelector('.temp-cel4').innerHTML = `${searchDailyWeather.temperature.celcius3}<span>°C</span>`;
+		//document.querySelector('.temp-back4').innerHTML = `${searchDailyWeather.temperature.fahrenheit2}<span>°F</span>`;
+
+		//Day five display
+		document.querySelector('.searchIcon5').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId4}.png"  style="width:27px"/>`;
+		document.querySelector('.searchCity5').innerHTML = searchDailyWeather.city4;
+		document.querySelector('.searchCountry5').innerHTML = searchDailyWeather.country4;
+		document.querySelector('.searchDesc5').innerHTML = searchDailyWeather.description4;
+		document.querySelector('.searchDate5').innerHTML = searchDailyWeather.date4;
+		document.querySelector('.temp-cel5').innerHTML = `${searchDailyWeather.temperature.celcius4}<span>°C</span>`;
+		//document.querySelector('.temp-back5').innerHTML = `${searchDailyWeather.temperature.fahrenheit2}<span>°F</span>`;
+
+		//Day six display
+		document.querySelector('.searchIcon6').innerHTML = `<img src="assets/img/icons/${searchDailyWeather.iconId5}.png"  style="width:27px"/>`;
+		document.querySelector('.searchCity6').innerHTML = searchDailyWeather.city5;
+		document.querySelector('.searchCountry6').innerHTML = searchDailyWeather.country5;
+		document.querySelector('.searchDesc6').innerHTML = searchDailyWeather.description5;
+		document.querySelector('.searchDate6').innerHTML = searchDailyWeather.date5;
+		document.querySelector('.temp-cel6').innerHTML = `${searchDailyWeather.temperature.celcius5}<span>°C</span>`;
+		//document.querySelector('.temp-back4').innerHTML = `${searchDailyWeather.temperature.fahrenheit2}<span>°F</span>`;
+};
+
+
