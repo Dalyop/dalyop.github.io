@@ -2,280 +2,116 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Smash it Weather App</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#270e59">
-  <meta name="msapplication-TileColor" content="#9f00a7">
-  <meta name="theme-color" content="#ffffff">
-
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Whirly Weather</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
 
   <!-- Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
-
+  <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center justify-content-between">
-
-        <a href="index.html" class="logo">Smash It</a>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li><a class="city">City</a></li>
-          <li><a class="country">Country</a></li>
-          <li class="iconImages"><img src="assets/img/icons/unknown.png" width="27px" alt="default unknown weather icon"></li>
-          <li><a class="temp-front">-°C</a></li>
-          <li><a class="temp-back">°F</a></li>
-          <li><a class="desc">Description</a</li>
-        </ul>
-      </nav>
-
-      <div id="search-2" class="searchContainer">
-				<input class="inputValue" type="search" name="search" placeholder="Enter city..." value="Abuja">
-				<input type="submit" name="Search city button" value="Go" class="searchButton">
+  <header id="header">
+    <nav>
+      <div>
+        <a href="index.html" class="logo">Whirly Weather</a>
       </div>
-
-    </div>
+      <div class="search">
+        <input class="search" type="text" placeholder="Enter city name" spellcheck="false" />
+        <button class="button"><img src="https://i.postimg.cc/WzJt1hwQ/search.png" /></button>
+      </div>
+    </nav>
   </header>
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container">
-
-      <div class="row justify-content-center">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Smash It weather<span>.</span></h1>
-          <h4>Hourly weather forecast based on your location</h4>
-        </div>
+  <!-- ======= Main ======= -->
+  <main class="main" style="display: flex;"
+    <div class="card">
+      <div class="error">
+        <p>Invalid city name</p>
       </div>
-
-      <div class="row mt-5 justify-content-center">
-        <div class="col-xl-2 col-md-4 col-6">
-          <div class="icon-box">
-            <i class="fiveIcon1"><img src="assets/img/icons/unknown.png" width="60px" alt="default unknown weather icon"></i>
-            <p class="fiveTemp1">-°C</a></p>
-            <p class="fiveCity1"> - </p>
-            <span class="fiveCountry1"> - </span>
-            <p class="fiveDesc1"> - <span><date class="fiveDate1"> - </date></span></p>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4 col-6">
-          <div class="icon-box">
-            <i class="fiveIcon2"><img src="assets/img/icons/unknown.png" width="60px" alt="default unknown weather icon"></i>
-            <p class="fiveTemp2"> -°C </a></p>
-            <p class="fiveCity2"> - </p>
-            <span class="fiveCountry2"> - </span>
-            <p class="fiveDesc2"> - <span><date class="fiveDate2"> Date</date></span></p>
-          </div>
-        </div><div class="col-xl-2 col-md-4 col-6">
-          <div class="icon-box">
-            <i class="fiveIcon3"><img src="assets/img/icons/unknown.png" width="60px" alt="default unknown weather icon"></i>
-            <p class="fiveTemp3"> -°C </a></p>
-            <p class="fiveCity3">City</p>
-            <span class="fiveCountry3"> - </span>
-            <p class="fiveDesc3"> - <span><date class="fiveDate3"> - </date></span></p>
-          </div>
-        </div><div class="col-xl-2 col-md-4 col-6">
-          <div class="icon-box">
-            <i class="fiveIcon4"><img src="assets/img/icons/unknown.png" width="60px" alt="default unknown weather icon"></i>
-            <p class="fiveTemp4"> -°C </a></p>
-            <p class="fiveCity4"> - </p>
-            <span class="fiveCountry4"> - </span>
-            <p class="fiveDesc4"> - <span><date class="fiveDate4"> Date</date></span></p>
-          </div>
-        </div>
-    </div>
-  </section><!-- End Hero -->
-
-
-  <main id="main">
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Get current five days weather forecast</h2>
-          <div class="form-row">
-            <div class="col-12 col-md-9 mb-2 mb-md-0">
-              <input type="email" id="searchInput" alt="Search box" name="Search loaction by city name" class="form-control form-control-lg" placeholder="Enter city name...">
+      <div class="weather">
+        <img src="https://i.postimg.cc/ZnFndXXc/rain.png" class="weather-icon" />
+        <h1 class="temp">31°C</h1>
+        <h2 class="city">New York</h2>
+        <div class="details">
+          <div class="col">
+            <img src="https://i.postimg.cc/X7jdggxJ/humidity.png" />
+            <div>
+              <p class="humidity">63%</p>
+              <p>Humidity</p>
             </div>
-            <div class="col-12 col-md-3">
-              <button type="submit" id="dailySearch" name="submit button" class="btn btn-block btn-lg btn-primary">Search!</button>
+          </div>
+          <div class="col">
+            <img src="https://i.postimg.cc/jjhQj3B7/wind.png" />
+            <div>
+              <p class="wind">8 km/h</p>
+              <p>Wind Speed</p>
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-xl-2 col-md-4 col-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div><i class="searchIcon1"><img src="assets/img/icons/unknown.png" width="50px" alt="default unknown weather icon"></i></div>
-              <h4><a class="temp-cel1"> -°C </a></h4>
-              <p class="searchDesc1"> </p>
-              <p class="searchCity1"> </p>
-              <p class="searchCountry1"> </p>
-              <p class="searchDate1"> </p>
-            </div>
-          </div>
-
-          <div class="col-xl-2 col-md-4 col-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div><i class="searchIcon2"><img src="assets/img/icons/unknown.png" width="50px" alt="default unknown weather icon"></i></div>
-              <h4><a class="temp-cel2"> -°C </a></h4>
-              <p class="searchDesc2"> </p>
-              <p class="searchCity2"> </p>
-              <p class="searchCountry2"> </p>
-              <p class="searchDate2"> </p>
-            </div>
-          </div>
-
-          <div class="col-xl-2 col-md-4 col-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div><i class="searchIcon3"><img src="assets/img/icons/unknown.png" width="50px" alt="default unknown weather icon"></i></div>
-              <h4><a class="temp-cel3"> -°C </a></h4>
-              <p class="searchDesc3"> </p>
-              <p class="searchCity3"> </p>
-              <p class="searchCountry3"> </p>
-              <p class="searchDate3"> </p>
-            </div>
-          </div>
-
-          <div class="col-xl-2 col-md-4 col-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div><i class="searchIcon4"><img src="assets/img/icons/unknown.png" width="50px" alt="default unknown weather icon"></i></div>
-              <h4><a class="temp-cel4"> -°C </a></h4>
-              <p class="searchDesc4"> </p>
-              <p class="searchCity4"> </p>
-              <p class="searchCountry4"> </p>
-              <p class="searchDate4"> </p>
-            </div>
-          </div>
-
-          <div class="col-xl-2 col-md-4 col-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div><i class="searchIcon5"><img src="assets/img/icons/unknown.png" width="50px" alt="default unknown weather icon"></i></div>
-              <h4><a class="temp-cel5"> -°C </a></h4>
-              <p class="searchDesc5"> </p>
-              <p class="searchCity5"> </p>
-              <p class="searchCountry5"> </p>
-              <p class="searchDate5"> </p>
-            </div>
-          </div>
-
-          <div class="col-xl-2 col-md-4 col-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div><i class="searchIcon6"><img src="assets/img/icons/unknown.png" width="50px" alt="default unknown weather icon"></i></div>
-              <h4><a class="temp-cel6"> -°C </a></h4>
-              <p class="searchDesc6"> </p>
-              <p class="searchCity6"> </p>
-              <p class="searchCountry6"> </p>
-              <p class="searchDate6"> </p>
-            </div>
-          </div>
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container">
-
-        <div class="row no-gutters">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
-          <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
-            <div class="content d-flex flex-column justify-content-center">
-              <h3>Daily weather forecast</h3>
-              <p>
-                Four days daily weather information based on your current location
-              </p>
-              <div class="row">
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="dailyIcon1"><img src="assets/img/icons/unknown.png" alt="default unknown weather icon"></i>
-                    <span class="dailyTemperature1"> -°C </span>
-                    <p><strong class="dailyDescription1"> - </strong>.</p>
-                    <p><strong class="dailyCity1"> - </strong></p>
-                    <p><strong class="dailyDate1"> - </strong>.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="dailyIcon2"><img src="assets/img/icons/unknown.png" alt="default unknown weather icon"></i>
-                    <span class="dailyTemperature2"> -°C </span>
-                    <p><strong class="dailyDescription2"> - </strong>.</p>
-                    <p><strong class="dailyCity2"> - </strong></p>
-                    <p><strong class="dailyDate2"> - </strong>.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="dailyIcon3"><img src="assets/img/icons/unknown.png" alt="default unknown weather icon"></i>
-                    <span class="dailyTemperature3"> -°C </span>
-                    <p><strong class="dailyDescription3"> - </strong>.</p>
-                    <p><strong class="dailyCity3"> - </strong></p>
-                    <p><strong class="dailyDate3"> - </strong>.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-6 d-md-flex align-items-md-stretch">
-                  <div class="count-box">
-                    <i class="dailyIcon4"><img src="assets/img/icons/unknown.png" alt="default unknown weather icon"></i>
-                    <span class="dailyTemperature4"> -°C </span>
-                    <p><strong class="dailyDescription4">Undefined</strong>.</p>
-                    <p><strong class="dailyCity4"> - </strong></p>
-                    <p><strong class="dailyDate4"> - </strong>.</p>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End .content-->
-          </div>
-        </div>
-      </div>
-    </section><!-- End Counts Section -->
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Google Africa Developer Scholarship</span></strong>.
-      </div>
-      <div class="credits">
-         <a href="#">GADS2020</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
-  <div id="preloader"></div>
-
+    <!-- ======= Weather Cards =======  -->
+    <div class="container">
+      <div class="weather">
+        <h1 class="header"></h1>
+        <div class="cards">
+          <div class="card">
+            <div class="city">Delhi</div>
+            <div class="sunny">
+              <img src="https://cdn.jim-nielsen.com/ios/512/today-weather-2015-08-20.png?rf=1024"
+                alt="Sunny weather icon" />
+            </div>
+            <div class="temp">
+              <span class="deg">40&deg;</span>
+              <span>Sunny</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="city">Mumbai</div>
+            <div class="cloudy">
+              <img src="https://cdn.jim-nielsen.com/ios/512/weather-2021-12-07.png?rf=1024" alt="Cloudy weather icon" />
+            </div>
+            <div class="temp">
+              <span class="deg">25&deg;</span>
+              <span>Cloudy</span>
+            </div>
+          </div>
   
-  <!-- Main JS File -->
-
+          <div class="card">
+            <div class="city">Bangalore</div>
+            <div class="rainy">
+              <img src="https://cdn.jim-nielsen.com/ios/512/weather-2019-02-07.png?rf=1024" alt="Rainy weather icon" />
+            </div>
+            <div class="temp">
+              <span class="deg">14&deg;</span>
+              <span>Rainy</span>
+            </div>
+          </div>
+  
+          <div class="card">
+            <div class="city">Shimla</div>
+            <div class="snow">
+              <img
+                src="https://cdn3.iconfinder.com/data/icons/winter-flat-8/32/Winter_season_cold_snow_snowflake_Christmas_frost-512.png"
+                alt="Snowy weather icon" />
+            </div>
+            <div class="temp">
+              <span class="deg">-10&deg;</span>
+              <span>Snowy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </main>
+  <!-- =======Search Weather Card ======= -->
   <script src="src/app.js"></script>
 </body>
 
